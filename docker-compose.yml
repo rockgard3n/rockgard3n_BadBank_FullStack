@@ -1,0 +1,23 @@
+version: '3.2'
+
+services:
+  badbank_front:
+    build: './'
+    depends_on:
+      - badbank_back
+    ports:
+      - "3000:3000"
+
+  badbank_back:
+    image: mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./app:/usr/src/app
+
+networks:
+  default:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.123.0/24
