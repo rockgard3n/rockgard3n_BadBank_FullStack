@@ -1,4 +1,6 @@
 const MongoClient = require('mongodb').MongoClient;
+//const url = 'mongodb://localhost:27017'
+//below is if im using my dockerized version 
 const url         = 'mongodb://badbank_mongo:27017';
 let db            = null;
 

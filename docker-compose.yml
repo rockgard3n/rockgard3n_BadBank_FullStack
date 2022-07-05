@@ -6,12 +6,12 @@ services:
     depends_on:
       - badbank_back
     ports:
-      - "3000:3000"
+      - "3001:3001"
     networks:
       - badbank_network
 #by labeling the hostname we can then use that in the URL in our DAL file rather than local host which avoids the issue where
 #our middleware wasn't able to find the backend
-  mongo:
+  badbank_back:
     image: mongo
     hostname: badbank_mongo
     ports:
@@ -20,9 +20,15 @@ services:
       - badbank_network
     volumes:
       - ./app:/usr/src/app
-
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
 #This is important when have multiple containers, lets them live and talk on the same network 
 networks:
   badbank_network:
     name: badbank_network
     driver: bridge
+    ipam:
+      config:
+        - subnet: 192.168.123.0/24
