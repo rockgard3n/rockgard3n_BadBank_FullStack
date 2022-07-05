@@ -87,6 +87,6 @@ app.get('/account/balance/:email', function (req, res) {
 */
 
 //start our listener for the server
-var port = 3000;
+var port = 3001;
 app.listen(port);
 console.log('Running on port: ' + port);

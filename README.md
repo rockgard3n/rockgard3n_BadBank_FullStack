@@ -10,3 +10,17 @@ node index.js
 docker run -p 27017:27017 --name badbank -d mongo
 
 DAL.js - a data abstraction layer 
+
+## Useful commands
+
+to get to the docker container's bash shell, you will need to change `rockgard3n_badbank_fullstack_badbank_back_1` to the name of the container you want to connect to. this is useful to troubleshoot file location and container file structure.
+```
+docker exec -it -e COLUMNS=`tput cols` -e LINES=`tput lines` rockgard3n_badbank_fullstack_badbank_back_1 bash
+```
+
+## To Run
+
+1. Clone this repo
+2. run `docker-compose up --build`
+3. go to [127.0.0.1:3000](127.0.0.1:3000)
+4. BOOM! it should work
