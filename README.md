@@ -26,3 +26,6 @@ to get to the docker container's bash shell, you will need to change `rockgard3n
 docker exec -it -e COLUMNS=`tput cols` -e LINES=`tput lines` rockgard3n_badbank_fullstack_badbank_back_1 bash
 ```
 
+## Swagger Documenation 
+https://app.swaggerhub.com/apis/rockgard3n/bad-bank_api_documentation/1.0.0
+

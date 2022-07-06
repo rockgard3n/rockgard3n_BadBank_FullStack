@@ -1,0 +1,97 @@
+swagger: '2.0'
+info:
+  description: |
+    This is my badbank server for the MIT final portfolio project
+  version: 1.0.0
+  title: BadBank API Documentation
+  contact:
+    email: apiteam@swagger.io
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+# host: petstore.swagger.io
+# basePath: /#
+tags:
+- name: account
+  description: get access to the account info of useres in our DB
+# schemes:
+# - http
+paths:
+  /account/create/{:name}/{:email}/{:password}:
+    get:
+      tags:
+      - account
+      summary: Add a new pet to the store
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: name
+        description: name of user
+        required: true
+      - in: body
+        name: email
+        description: email of user
+        required: true
+      - in: body
+        name: password
+        description: password of user
+        required: true
+  /account/all:
+    get:
+      tags:
+      - pet
+      summary: Add a new pet to the store
+      produces:
+      - application/json
+      - application/xml
+  /account/login/{:email}/{:password}:
+    get:
+      tags:
+      - account
+      summary: collect info of a user associated with a matching email & password
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: email
+        description: email of user
+        required: true
+      - in: body
+        name: password
+        description: password of user
+        required: true
+  /account/login/{:email}/{:password}/{:ammount}:
+    get:
+      tags:
+      - account
+      summary: update balance of user
+      produces:
+      - application/json
+      - application/xml
+      parameters:
+      - in: body
+        name: email
+        description: email of user
+        required: true
+      - in: body
+        name: password
+        description: password of user
+        required: true
+      - in: body
+        name: ammount
+        description: amount to be updated
+        required: true
+      
+
+
+  description: Find out more about Swagger
+  url: http://swagger.io
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /rockgard3n/create/1.0.0
+schemes:
+ - https
+ - http
